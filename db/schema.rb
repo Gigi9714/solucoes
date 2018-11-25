@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_18_233002) do
+ActiveRecord::Schema.define(version: 2018_11_20_182610) do
+
+  create_table "eventos", force: :cascade do |t|
+    t.string "nome"
+    t.datetime "dataInicio"
+    t.datetime "dataFim"
+    t.integer "jogo_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["jogo_id"], name: "index_eventos_on_jogo_id"
+  end
 
   create_table "jogos", force: :cascade do |t|
     t.string "nome"

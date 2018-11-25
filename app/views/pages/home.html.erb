@@ -1,0 +1,57 @@
+<h1>Bem-vindo(a)!</h1>
+<h2>Últimos jogos adicionados:</h2>
+
+<table class="table table-hover table-nonfluid">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @jogos.each do |jogo| %>
+      <tr>
+        <td><%= jogo.nome %></td>
+        <td class="text-center"><%= link_to '<span class="glyphicon glyphicon-zoom-in" aria-hidden="true"></span>'.html_safe, jogo %></td>
+        <td><%= link_to 'Add', jogo, method: :post %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="tab">
+<%= link_to 'Ver todos os jogos'.html_safe, jogos_path %>
+</div>
+
+<h2>Últimos eventos adicionados:</h2>
+
+<table class="table table-hover table-nonfluid">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Data de Início</th>
+      <th>Data de Fim</th>
+      <th>Jogo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @eventos.each do |evento| %>
+      <tr>
+        <td><%= evento.nome %></td>
+        <td><%= evento.dataInicio %></td>
+        <td><%= evento.dataFim %></td>
+        <td><%= evento.jogo.nome %></td>
+        <td><%= link_to 'Show', evento %></td>
+        <td><%= link_to 'Edit', edit_evento_path(evento) %></td>
+        <td><%= link_to 'Destroy', evento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div class="tab">
+<%= link_to 'Ver todos os eventos'.html_safe, eventos_path %>
+</div>

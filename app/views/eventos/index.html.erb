@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Eventos</h1>
+
+<table class="table table-hover table-nonfluid">
+  <thead>
+    <tr>
+      <th>Nome</th>
+      <th>Data de Início</th>
+      <th>Data de Fim</th>
+      <th>Jogo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @eventos.each do |evento| %>
+      <tr>
+        <td><%= evento.nome %></td>
+        <td><%= evento.dataInicio %></td>
+        <td><%= evento.dataFim %></td>
+        <td><%= evento.jogo.nome %></td>
+        <td><%= link_to 'Show', evento %></td>
+        <td><%= link_to 'Edit', edit_evento_path(evento) %></td>
+        <td><%= link_to 'Destroy', evento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Evento', new_evento_path %>

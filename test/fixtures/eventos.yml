@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  dataInicio: 2018-11-20 16:26:10
+  dataFim: 2018-11-20 16:26:10
+  jogo: one
+
+two:
+  nome: MyString
+  dataInicio: 2018-11-20 16:26:10
+  dataFim: 2018-11-20 16:26:10
+  jogo: two
